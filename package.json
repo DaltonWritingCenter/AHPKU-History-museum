@@ -1,0 +1,60 @@
+{
+  "name": "AHPKUMuseum",
+  "version": "1.0.0",
+  "description": "The online history museum for Affiliated High School of Peking University.\r It's Currently under development. This open-source project only include the front-end source code. The server-side code and resources are not included due to potential copy-right problems.\r The website link for the museum is 62.234.147.251:8000, the link might change cuz the current server does not have enough storage.",
+  "dependencies": {
+    "@emotion/react": "^11.4.0",
+    "@emotion/styled": "^11.3.0",
+    "@fontsource/acme": "^4.4.5",
+    "@fontsource/benne": "^4.4.5",
+    "@fontsource/crimson-pro": "^4.4.5",
+    "@fontsource/long-cang": "^4.4.5",
+    "@fontsource/ma-shan-zheng": "^4.4.5",
+    "@fontsource/noto-serif-sc": "^4.4.5",
+    "@fontsource/patrick-hand": "^4.4.5",
+    "@fontsource/permanent-marker": "^4.4.5",
+    "@fontsource/roboto": "^4.4.5",
+    "@fontsource/zhi-mang-xing": "^4.4.5",
+    "@material-ui/core": "^5.0.0-alpha.38",
+    "@material-ui/icons": "^5.0.0-alpha.37",
+    "@material-ui/lab": "^5.0.0-alpha.38",
+    "@material-ui/styles": "^5.0.0-alpha.36",
+    "@mui/icons-material": "^5.0.0-rc.0",
+    "i18next": "^20.3.2",
+    "i18next-browser-languagedetector": "^6.1.2",
+    "i18next-chained-backend": "^3.0.2",
+    "i18next-http-backend": "^1.2.6",
+    "i18next-localstorage-backend": "^3.1.3",
+    "jsmediatags": "^3.9.7",
+    "npm": "^6.14.8",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-i18next": "^11.11.0",
+    "react-swipeable-views": "^0.14.0"
+  },
+  "devDependencies": {
+    "@types/jsmediatags": "^3.9.2",
+    "@types/react": "^17.0.11",
+    "@types/react-dom": "^17.0.8",
+    "parcel": "^2.0.0-beta.2",
+    "typescript": "^4.3.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zhaiyuqing2003/AHPKUMuseum.git"
+  },
+  "keywords": [
+    "Museum",
+    "JavaScript",
+    "TypeScript"
+  ],
+  "author": "Zhai Yuqing, Tan Chuping",
+  "license": "GNU v2",
+  "bugs": {
+    "url": "https://github.com/Zhaiyuqing2003/AHPKUMuseum/issues"
+  },
+  "homepage": "https://github.com/Zhaiyuqing2003/AHPKUMuseum#readme"
+}
