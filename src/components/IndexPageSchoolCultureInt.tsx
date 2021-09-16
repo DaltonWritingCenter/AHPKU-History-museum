@@ -5,15 +5,11 @@ import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import CardActions from '@material-ui/core/CardActions'
-import IconButton from '@material-ui/core/IconButton';
+
 import Typography from '@material-ui/core/Typography';
-import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
-import PlayArrowIcon from '@material-ui/icons/PlayArrow';
-import SkipNextIcon from '@material-ui/icons/SkipNext';
-import { createIsAfterIgnoreDatePart } from '@material-ui/lab/internal/pickers/time-utils';
+
 import { makeStyles } from '@material-ui/styles';
-import Button from '@material-ui/core/Button';
+
 import { useTranslation } from "react-i18next";
 import { Theme } from "@material-ui/core/styles";
 
@@ -44,26 +40,26 @@ const cultures: cultureItem[] = [{
     picture : bascketballone,
     pictureblur : bascketballoneblur,
     headings : 'BiaoTi',
-    content: 'WenAn',
+    content: 'WenAnLanQiu',
 }, 
 {
     title: 'ZuQiuBei',
     picture : footballone,
     pictureblur : footballoneblur,
     headings : 'BiaoTi',
-    content: 'WenAn',
+    content: 'WenAnZuQiu',
 },{
     title: 'XiJuJie',
     picture : theatreone,
     pictureblur : theatreoneblur,
     headings : 'BiaoTi',
-    content: 'WenAn',
+    content: 'WenAnXiJu',
 },{
     title: 'WuDaoJie',
     picture : danceone,
     pictureblur : danceoneblur,
     headings : 'BiaoTi',
-    content: 'WenAn',
+    content: 'WenAnWuDao',
 } ]
 
 const ContentStyle = makeStyles((theme) => ({
@@ -163,7 +159,7 @@ function FuckIWantWhatEverIWant(input){
                         </CardMedia>        
 
                         <Grid item padding = {1} alignItems="center" >
-                                <Card className = {classes.card} sx={{ width: 135, height: 150, borderRadius : 8, boxShadow: 0, padding: 0.5}}>   
+                                <Card className = {classes.card} sx={{ width: 135, height: 240, borderRadius : 6, boxShadow: 0, padding: 0}}>   
                                         <CardContent >
                                                     <Typography component="div" variant="h6" color="white">
                                                         {t(headings)}
@@ -198,23 +194,23 @@ function FuckIWantWhatEverIWant(input){
 
     <>
 
-        <Card  sx={{ maxWidth: 300, display: 'flex', height:335, borderRadius : 14 }}> {(Daddy).map(({ title, picture, pictureblur, headings, content }, index) => (
+        <Card  sx={{ maxWidth: 300, display: 'flex', height:370, borderRadius : 14 }}> {(Daddy).map(({ title, picture, pictureblur, headings, content }, index) => (
         // <Grid item  key = {  index }>
             
             
                 <CardMedia
-                    sx={{ height: 335,width: 300}}
+                    sx={{ height: 400,width: 300}}
                     image={pictureblur} >
         
                     
-                    <Card sx={{ maxWidth: 500, height: 235, boxShadow:10 }} className = {classes.floatcard} >
+                    <Card sx={{ maxWidth: 500, height: 250, boxShadow:10, borderRadius : 0 }} className = {classes.floatcard} >
     
                         <Grid
                             container
                             direction="row" 
                             alignItems="center">
                             <CardMedia 
-                                sx={{ height: 235, width : 300}}
+                                sx={{ height: 250, width : 300}}
                                 image={picture}
                                 title={t('Verge')}>
                                 <CardContent sx={{ flex: '1 0 auto' }}>
@@ -239,7 +235,7 @@ function FuckIWantWhatEverIWant(input){
     
                         </Grid>
                     </Card>                                    
-                                     <Card className = {classes.floatcard} sx={{ width: 300, height: 150, boxShadow: 0,}}>   
+                                     <Card className = {classes.floatcard} sx={{ width: 300, height: 250, boxShadow: 0,}}>   
                                             <CardContent >
                                                         <Typography component="div" variant="h6" color="white" paddingLeft = {3}>
                                                             {t(headings)}

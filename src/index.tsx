@@ -29,7 +29,7 @@ import createAppTheme from "./utils/AppTheme"
 import changeWebIconTheme from "./utils/WebIconTheme"
 //
 import "./utils/FontDependencies";
-
+import Imagelist from "./components/SchoolViewImageList"
 import AppTopBar from "./components/AppTopBar"
 import IndexPageFrontContent from "./components/IndexPageFrontContent"
 import AppContainer from "./components/AppContainer"
@@ -40,7 +40,12 @@ import UseSearchBar from './components/SearchBar'
 import IndexPageTimeline from './components/IndexPageTimeline'
 import SchoolView from './components/IndexSchoolView'
 import AppMusicBar from "./components/AppMusicBar"
-
+import {ControlledAccordions} from "./components/AccordionShadow"
+import AppBottom from './components/AppBottomBar'
+import Developer from "./components/Developer"
+import Teachers from "./components/TeachersBlock"
+import Imagelisttwo from './components/SchoolViewImageListtwo'
+import {Accordiontwo} from './components/AccordionStudent'
 declare module '@material-ui/styles'{
     interface DefaultTheme extends Theme {}
 }
@@ -104,28 +109,60 @@ function App(){
             
                 <IndexPageFrontContent />
                 <UseSearchBar></UseSearchBar>
+
                 <Divider></Divider>
                 <SchoolView></SchoolView>
-
                 <Divider></Divider>
-
                 <Grid
                   paddingTop = '80px'
                   paddingBottom = '50px'
                   container
                   direction="row"
-                  justifyContent="space-evenly"
+                  justifyContent="space-around"
+                  alignItems="flex-start">
+                    <Grid item><Imagelist></Imagelist></Grid>
+                    <Grid item><ControlledAccordions></ControlledAccordions></Grid>
+                </Grid>
+     
+                <Divider></Divider>
+                <Grid
+                  paddingTop = '80px'
+                  paddingBottom = '50px'
+                  container
+                  direction="row"
+                  justifyContent="space-around"
                   alignItems="flex-start">
                     <Grid item><IndexPageFlipCardsCulture></IndexPageFlipCardsCulture></Grid>
                     <Grid item><IndexPageFlipCardsAlumni></IndexPageFlipCardsAlumni></Grid>
                 </Grid>
 
                 <Divider></Divider>
+                <Teachers></Teachers>
+                <Divider></Divider>
+                <Grid
+                  paddingTop = '80px'
+                  paddingBottom = '50px'
+                  container
+                  direction="row"
+                  justifyContent="space-around"
+                  alignItems="flex-start">
+                    <Grid item><Imagelisttwo></Imagelisttwo></Grid>
+                    <Grid item><Accordiontwo></Accordiontwo></Grid>
+                </Grid>
+                <Divider></Divider>
 
                 <IndexPageTimeline />
+
+                <Divider></Divider>
+
+                <Developer></Developer>
+
+                <AppBottom></AppBottom>
                 
             </AppContainer>
+            
             <AppMusicBar/>
+            
         </ThemeProvider>
     </StyledEngineProvider>)
 }

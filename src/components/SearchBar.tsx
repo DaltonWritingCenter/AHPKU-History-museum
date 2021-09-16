@@ -1,11 +1,11 @@
 import * as React from 'react';
-import Divider from '@mui/material/Divider';
-import IconButton from '@mui/material/IconButton';
-import SearchIcon from '@mui/icons-material/Search';
+import Divider from '@material-ui/core/Divider';
+import IconButton from '@material-ui/core/IconButton';
+import SearchIcon from '@material-ui/icons/Search';
 import { Card, Typography} from '@material-ui/core'
 import Grid from '@material-ui/core/Grid';
-import { Box } from '@mui/system';
-import TextField from '@mui/material/TextField';
+import Box from '@material-ui/core/Box';
+import TextField from '@material-ui/core/TextField';
 import { useTheme } from '@material-ui/core/styles';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useTranslation } from "react-i18next";
@@ -32,8 +32,8 @@ function BigSearch() {
     direction="row"
     justifyContent="center"
     alignItems="flex-start"
-    paddingTop = '80px'
-    paddingBottom = '80px'
+    paddingTop = '81px'
+    paddingBottom = '81px'
     
 
   >
@@ -43,7 +43,8 @@ function BigSearch() {
         direction="column"
         justifyContent="center"
         alignItems="center"
-        sx = {{maxWidth : 400, minWidth:300, padding : 1, paddingBottom : 3}}
+    
+        sx = {{maxWidth : 401, minWidth:300, padding : 1, paddingBottom : 3}}
     >
         <Grid item sx =  {{maxWidth : 400, minWidth:300}}>
             <Typography variant = 'h4'>{t('TanXunZuJi')}</Typography>
@@ -91,7 +92,7 @@ function BigSearch() {
             variant = "contained"
             onClick = {openit}
             
-            // href = {'http://www.pkuschool.edu.cn/jsjg.jsp?wbtreeid=1066&searchScope=0&currentnum=2&newskeycode2='+ Buffer.from(values.amount).toString('base64') + '#'}
+            
             >
             <SearchIcon /><Typography paddingRight = '5px' >{t("SouSuo")}</Typography>
         </IconButton>
@@ -124,7 +125,7 @@ function SmallSearch(){
     direction="row"
     justifyContent="center"
     alignItems="flex-start"
-    paddingTop = '25px'
+    paddingTop = '26px'
     paddingBottom = '25px'
     
 
@@ -170,7 +171,7 @@ function SmallSearch(){
             variant = "contained"
             onClick = {openit}
             
-            // href = {'http://www.pkuschool.edu.cn/jsjg.jsp?wbtreeid=1066&searchScope=0&currentnum=2&newskeycode2='+ Buffer.from(values.amount).toString('base64') + '#'}
+       
             >
             <SearchIcon /><Typography paddingRight = '5px' >{t("SouSuo")}</Typography>
         </IconButton>
@@ -186,13 +187,11 @@ function SmallSearch(){
 
 
 
-
 export default function UseSearchBar(){
     let BigS = BigSearch()
     let SmallS = SmallSearch()
     let theme = useTheme();
     let { between, down, up, values } = theme.breakpoints;
-  //@ts-ignore
     let { desktop, laptop } = values;
   
     let isLargerThanDesktop = useMediaQuery(up(desktop));

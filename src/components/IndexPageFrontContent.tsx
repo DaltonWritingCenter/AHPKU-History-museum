@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import {
     Card,
@@ -33,32 +33,32 @@ import FontType from "../utils/FontType"
 import LanguageType from "../utils/LanguageType";
 
 //@ts-ignore
-import springDesktop from "../images/index/seasons/SpringDesktop.jpg"
+import springDesktop from "../images/index/seasons/SpringDesktop.webp"
 //@ts-ignore
-import springLaptop from "../images/index/seasons/SpringLaptop.jpg"
+import springLaptop from "../images/index/seasons/SpringLaptop.webp"
 //@ts-ignore
-import springMobile from "../images/index/seasons/SpringMobile.jpg"
+import springMobile from "../images/index/seasons/SpringMobile.webp"
   
 //@ts-ignore
-import summerDesktop from "../images/index/seasons/SummerDesktop.jpg"
+import summerDesktop from "../images/index/seasons/SummerDesktop.webp"
 //@ts-ignore
-import summerLaptop from "../images/index/seasons/SummerLaptop.jpg"
+import summerLaptop from "../images/index/seasons/SummerLaptop.webp"
 //@ts-ignore
-import summerMobile from "../images/index/seasons/SummerMobile.jpg"
+import summerMobile from "../images/index/seasons/SummerMobile.webp"
 
 //@ts-ignore
-import autumnDesktop from "../images/index/seasons/AutumnDesktop.jpg"
+import autumnDesktop from "../images/index/seasons/AutumnDesktop.webp"
 //@ts-ignore
-import autumnLaptop from "../images/index/seasons/AutumnLaptop.jpg"
+import autumnLaptop from "../images/index/seasons/AutumnLaptop.webp"
 //@ts-ignore
-import autumnMobile from "../images/index/seasons/AutumnMobile.jpg"
+import autumnMobile from "../images/index/seasons/AutumnMobile.webp"
 
 //@ts-ignore
-import winterDesktop from "../images/index/seasons/WinterDesktop.jpg"
+import winterDesktop from "../images/index/seasons/WinterDesktop.webp"
 //@ts-ignore
-import winterLaptop from "../images/index/seasons/WinterLaptop.jpg"
+import winterLaptop from "../images/index/seasons/WinterLaptop.webp"
 //@ts-ignore
-import winterMobile from "../images/index/seasons/WinterMobile.jpg"
+import winterMobile from "../images/index/seasons/WinterMobile.webp"
 
 const useIndexPageFrontContentStyle = makeStyles((theme) => ({
     cardMedia : {
@@ -262,14 +262,21 @@ const ImageSubscript = ({ languageType, seasonType, t } : ImageSubscriptProps) =
                     padding = {
                         theme.spacing(0, paddingWidth)
                     }>
-                    { t(seasonText) }
+                    { t(seasonText) + ' 1960-'+ (new Date()).getFullYear()}
                 </Typography>
             </Grid>
         </Box>
     </Grid>)
 }
-
+function letsStart(){
+    window.scrollTo({
+        top: document.body.scrollHeight/8-450,
+        left: 0,
+        behavior: 'smooth'
+      })
+}
 const IndexPageFrontContentHeadline = ({ languageType, t } : IndexPageFrontContentHeadlineProps) => {
+    
     const theme = useTheme()
     const frontContentFontFamily = useFrontContentFontFamily(languageType)
     const [
@@ -325,15 +332,16 @@ const IndexPageFrontContentHeadline = ({ languageType, t } : IndexPageFrontConte
             variant = "contained"
             disableElevation 
             size = "large"
+            onClick = {letsStart}
             sx = {{ 
                 alignSelf : "flex-start",
                 marginLeft : theme.spacing(0.8),
                 marginTop : theme.spacing(2)
             }}>
             <Typography 
-                fontFamily = { FontType.MaShanZheng }
+                fontFamily = { frontContentFontFamily }
                 fontSize = { theme.spacing(2.6) }>
-                开始历史的回溯
+                {t('kaishi')}
             </Typography>
         </Button>
     </Grid>)
@@ -347,7 +355,7 @@ export default function(){
     const { t } = useTranslation("indexPageFrontContent")
 
     const { appOptions : { languageType }} = theme
-    const [seasonType, setSeasonType] = useState(SeasonType.Summer)
+    const [seasonType, setSeasonType] = useState(useSeason)
 
     const deviceWidthQuery = useDeviceWidthQuery(theme)
     const imageDir = useImageDir(deviceWidthQuery, seasonType)
